@@ -54,8 +54,11 @@ RUN apt-get update && \
       lcov \
       lld \
       python3-pip \
-    && pip3 install \
-      pyserial \
+    && pip3 install \ 
+      # TODO: missing rosdep key
+      Jetson.GPIO \
+      # TODO: add as exec_depend in underlay
+      requests \
     && rosdep update \
     && colcon mixin update \
     && colcon metadata update \
@@ -104,6 +107,10 @@ RUN . $UNDERLAY_WS/install/setup.sh && \
     colcon build \
       --symlink-install \
       --mixin $OVERLAY_MIXINS
+
+# Set Robot Hardware for Duckietown
+ARG ROBOT_HARDWARE=jetson_nano
+ENV ROBOT_HARDWARE $ROBOT_HARDWARE
 
 # source overlay from entrypoint
 RUN sed --in-place \
