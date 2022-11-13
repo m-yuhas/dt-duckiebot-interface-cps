@@ -1,0 +1,13 @@
+repositories:
+  nicholas-gs/dt-common-cps:
+    type: git
+    url: https://github.com/nicholas-gs/dt-common-cps.git
+    version: main
+  nicholas-gs/dt_interfaces_cps:
+    type: git
+    url: https://github.com/nicholas-gs/dt_interfaces_cps.git
+    version: main
+  nicholas-gs/VL53L0X_rasp_python:
+    type: git
+    url: https://github.com/nicholas-gs/VL53L0X_rasp_python.git
+    version: dt_cps_ros2_pkg
